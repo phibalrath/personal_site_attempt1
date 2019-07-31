@@ -5,11 +5,20 @@
 	padding: 0;
 }
 
-.example {
-	color: green;
-	font-family: verdana;
+.navbar-nav > li {
+	padding-left:1em;
+	padding-right:1em;
 }
 
-.body {
-	margin: 0;
+.navbar-brand {
+	padding-right: 23em;
 }
+
+.footer {
+	
+	position: absolute;
+	bottom:0;
+	height: 6em;
+	width:99%;
+}
+
