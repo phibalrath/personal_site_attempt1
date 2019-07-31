@@ -1,5 +1,8 @@
 package com.tts.personalweb.Controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +15,8 @@ import com.tts.personalweb.Repository.ContactsRepository;
 public class IndexController {
 	
 	private ContactsRepository contactsRepository;
+	
+	private static List<Contacts> form = new ArrayList<>();
 	
 	@GetMapping(value="/")
 	public String index() {
@@ -38,11 +43,16 @@ public class IndexController {
 		return "contact";
 	}
 	
+	@GetMapping(value="/result")
+	public String result() {
+		return "result";
+	}
+	
 	//Create Method to Submit each Contact Me Form
 	@PostMapping(value="/contact-me")
 	public String submit(Contacts contacts, Model model) {
 		contactsRepository.save(contacts);
-		//posts.add(Contacts);
+		form.add(contacts);
 		model.addAttribute("name", contacts.getName());
 		model.addAttribute("email", contacts.getEmail());
 		model.addAttribute("message", contacts.getMessage());
