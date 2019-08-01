@@ -1,0 +1,16 @@
+.page-container {
+	position: relative;
+	min-height: 100%;
+}
+
+.content-wrap {
+	padding-bottom: 5rem;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	height: 7.5em;
+	width:99%;
+	padding-top: 10em;
+}

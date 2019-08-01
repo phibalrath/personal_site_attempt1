@@ -17,10 +17,11 @@
 .page-container {
 	position: relative;
 	min-height: 100%;
+	padding-top: 0;
 }
 
 .content-wrap {
-	padding-bottom: 5rem;
+	padding-bottom: 1rem;
 }
 
 .footer {
