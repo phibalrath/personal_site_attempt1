@@ -2,7 +2,7 @@
 	background-size: cover;
 	width: 100%;
 	margin: 0;
-	padding: 0;
+	padding-top: 2em;
 }
 
 .navbar-nav > li {
@@ -11,15 +11,21 @@
 }
 
 .navbar-brand {
-	padding-right: 23em;
+	padding-right: 35em;
+	padding-left: 3em;
 }
 
+
 .footer {
-	
+	background-color: #e3f2fd;
 	position: absolute;
 	bottom: 0;
 	height: 6em;
 	width:99%;
+}
+
+.phibal {
+	border-radius: 50%;
 }
 
 
