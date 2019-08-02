@@ -34,7 +34,7 @@
     				</ul>
   				</div>
 			</nav>
-		</div>
+
 		
 		</br>
 		
@@ -42,30 +42,43 @@
 			<div class="row">
 				<div class="col-md-12">
 					<center><h5>Please use the form below to get in touch!</h5></center>
-						<div class="contact-form">
-							<form action="/contact-me" method="post">
-								<div>
-									<label for="name">Name:</label>
-									<input type="text" id=name name="username">
+		</br>
+						<div class="row">
+							<div th:each="contacts:${form}">
+								<div class="col-md-12">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<p th:text="${form.name}"/>
+										</div>
+										<div class="panel-body">
+											<p th:text="${form.email}"/>
+											<p th:text="${form.message}"/>
+										</div>	
+									</div>
 								</div>
-								<div>
-									<label for="mail">E-Mail:</label>
-									<input type=email id=mail name="user_mail">
-								</div>
-								<div>
-									<label for="msg">Message:</label>
-									<textarea id="msg" name="user_message"></textarea>
-								</div>
-								</br>
-								<div>
-									<button type="submit"><a href="/result">Send your message</a></button>
-								</div>
-							</form>
+							</div>
 						</div>
-				</div>
-			</div>
-		</div>
 		
+				<!--th: Make connection btwn database tables and form  -->
+			<div class="form">
+				<form action="#" th:action="@{/contact-me}" th:object="${contacts}" method="post">
+					<table>
+						<tr>
+							<td>Name:</td>
+							<td><input type="text" th:field="*{name}" /></td>
+						</tr>
+						<tr>
+							<td>Email:</td>
+							<td><input type="text" th:field="*{email}" /></td>
+						</tr>
+							<td>Message:</td>
+							<td><input type="text" th:field="*{message}" /></td>
+						<tr>
+							<td><button type="submit"><a href="/result">Submit Your Contact Info</a></button></td>
+						</tr>
+					</table>
+				</form> 
+			</div>
 		</br>
 		
 		
@@ -83,44 +96,7 @@
 						</div>
 					</div>
 				</div>
-			</div>	
-		</div>
-			
-			<div class="row">
-			<div th:each="contacts:${form}">
-				<div class="col-md-6">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<p th:text="${form.name}"/>
-						</div>
-						<div class="panel-body">
-							<p th:text="${form.email}"/>
-							<p th:text="${form.message}"/>
-						</div>	
-					</div>
-				</div>
-			</div>
-		</div>
 		
-		<!--  <form action="#" th:action="@{/contact-me/results}" th:object="${submit}" method="post">
-			<table>
-				<tr>
-					<td>Name:</td>
-					<td><input type="text" th:field="*{name}" /></td>
-				</tr>
-				<tr>
-					<td>Email:</td>
-					<td><input type="text" th:field="{email}" /></td>
-				</tr>
-				<tr>
-					<td>Message:</td>
-					<td><input type="text" th:field="{message)" /></td>
-				</tr>
-				<tr>
-					<td><button type="submit">Submit Your Contact Info</button></td>
-				</tr>
-			</table>
-		</form> -->
 		
 		
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
