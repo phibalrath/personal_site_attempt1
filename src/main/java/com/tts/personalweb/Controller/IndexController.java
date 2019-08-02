@@ -50,8 +50,6 @@ public class IndexController {
 		return "result";
 	}
 	
-	private Contacts contacts;
-	
 	//Create Method to Submit each Contact Me Form
 	@PostMapping(value="/contact-me")
 	public String submit(Contacts contacts, Model model) {
