@@ -24,10 +24,10 @@
 
 form {
   width: 400px;
-
   padding: 1em;
   border: 1px solid #CCC;
   border-radius: 1em;  
+
 }
 
 label {
@@ -40,6 +40,14 @@ label {
 textarea {
   vertical-align: top;
   height: 5em;
+  width: 11.5em;
+}
+
+.contact-form {
+	text-align: center;
+	padding-left: 33em;
+	margin: 1em;
+	border-left: 3em;
 }
 
 

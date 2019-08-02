@@ -14,7 +14,7 @@ body {
 img {
 	height: 30em;
 	width: 22em;
-	border-radius: 15%;
+	border-radius: 5% 15% ;
 }
 
 .personal, .story{
